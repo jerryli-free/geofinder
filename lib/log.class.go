@@ -22,9 +22,9 @@ type UseLog struct {
 }
 
 const (
-	ACCESS_PATH  = "/home/log/gpsServer/http_access.log"
-	INFO_PATH    = "/home/log/gpsServer/info.log"
-	FATAL_PATH   = "/home/log/gpsServer/fatal.log"
+	ACCESS_PATH  = "/home/log/geofinder/http_access.log"
+	INFO_PATH    = "/home/log/geofinder/info.log"
+	FATAL_PATH   = "/home/log/geofinder/fatal.log"
 	PREFIX_INFO  = "INFO: "
 	PREFIX_FATAL = "FATAL: "
 	BUFFER_CAP = 1024 * 32

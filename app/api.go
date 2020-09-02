@@ -2,7 +2,6 @@ package app
 
 import (
 	"encoding/json"
-	"github.com/fvbock/endless"
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
 	"gpsService/lib"
@@ -31,7 +30,8 @@ func (g *GpsServer) Start() {
 	app.Use(gzip.Gzip(gzip.DefaultCompression)) //开启gzip压缩. 请求头中含 "Accept-Encoding : gzip" 才会压缩
 	g.GpsService.Init()
 	app.GET("/getcity", g.routeGpsServer)
-	endless.ListenAndServe(":"+strconv.Itoa(g.Port), app)
+	app.Run(":"+strconv.Itoa(g.Port))
+	//endless.ListenAndServe(":"+strconv.Itoa(g.Port), app)
 }
 
 func (g *GpsServer) routeGpsServer(ctx *gin.Context) {
